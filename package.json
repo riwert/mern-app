@@ -1,5 +1,5 @@
 {
-  "name": "mearn-app",
+  "name": "mern-app",
   "version": "1.0.0",
   "description": "MongoDB Express React Node.js",
   "main": "server.js",
