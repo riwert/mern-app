@@ -55,16 +55,16 @@ class ItemModal extends Component {
                     modal={this.toggle}
                     autoFocus={false}
                 >
-                    <ModalHeader toggle={this.toggle}>Add Item to the List</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>Add new item to the list</ModalHeader>
                     <ModalBody>
                         <Form onSubmit={this.onSubmit}>
                             <FormGroup>
-                                <Label for="item">Item</Label>
+                                <Label for="item">New item</Label>
                                 <Input
                                     type="text"
                                     id="item"
                                     name="name"
-                                    placeholder="Add new item"
+                                    placeholder="name"
                                     onChange={this.onChange}
                                     autoFocus
                                 />
@@ -73,7 +73,7 @@ class ItemModal extends Component {
                                     style={{ marginTop: '1rem' }}
                                     onClick={this.onSubmit}
                                 >
-                                    Add Item
+                                    Save
                                 </Button>
                             </FormGroup>
                         </Form>
