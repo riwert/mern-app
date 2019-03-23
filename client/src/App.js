@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AppNavbar from './components/AppNavbar';
+import AppFooter from './components/AppFooter';
 import ItemList from './components/ItemList';
 import ItemModal from './components/ItemModal';
 
@@ -17,6 +18,7 @@ class App extends Component {
           <AppNavbar />
           <ItemModal />
           <ItemList />
+          <AppFooter />
         </div>
       </Provider>
     );
