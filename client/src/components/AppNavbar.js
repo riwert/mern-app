@@ -64,6 +64,11 @@ class AppNavbar extends Component {
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink href="https://github.com/riwert/mern-app">
+                                    GitHub
+                                </NavLink>
+                            </NavItem>
                             {isAuthenticated ? authLinks : guestLinks}
                         </Nav>
                     </Collapse>
