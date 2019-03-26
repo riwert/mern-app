@@ -6,7 +6,7 @@ import { getItems, deleteItem } from '../../actions/itemActions';
 import PropTypes from 'prop-types';
 
 class ItemList extends Component {
-        
+
     static propTypes = {
         getItems: PropTypes.func.isRequired,
         deleteItem: PropTypes.func.isRequired,
@@ -39,8 +39,8 @@ class ItemList extends Component {
                                             onClick={this.onDeleteClick.bind(this, _id)}
                                         >&times;</Button>
                                     ) : (
-                                        ''
-                                    )}                                    
+                                        <span className="mr-1">&bull;</span>
+                                    )}
                                     {name}
                                 </ListGroupItem>
                             </CSSTransition>
