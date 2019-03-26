@@ -72,6 +72,12 @@ class RegisterModal extends Component {
         this.props.register(newUser);        
     }
 
+    onKeyUp = e => {
+        if (e.key === 'Enter') {
+            this.onSubmit(e);
+        }
+    }
+
     render() {
         return (
             <>
@@ -84,7 +90,8 @@ class RegisterModal extends Component {
 
                 <Modal
                     isOpen={this.state.modal}
-                    autoFocus={false}
+                    toggle={this.toggle}
+                    autoFocus={false}                    
                 >
                     <ModalHeader toggle={this.toggle}>Register</ModalHeader>
                     <ModalBody>
@@ -99,6 +106,7 @@ class RegisterModal extends Component {
                                     name="name"
                                     placeholder="name"
                                     onChange={this.onChange}
+                                    onKeyUp={this.onKeyUp}
                                     autoFocus
                                 />
                                 <Label for="email">E-mail</Label>
@@ -109,6 +117,7 @@ class RegisterModal extends Component {
                                     name="email"
                                     placeholder="e-mail"
                                     onChange={this.onChange}
+                                    onKeyUp={this.onKeyUp}
                                 />
                                 <Label for="password">Password</Label>
                                 <Input
@@ -118,14 +127,17 @@ class RegisterModal extends Component {
                                     name="password"
                                     placeholder="password"
                                     onChange={this.onChange}
+                                    onKeyUp={this.onKeyUp}
                                 />
-                                <Button
-                                    color="dark"
-                                    style={{ marginTop: '1rem' }}
-                                    onClick={this.onSubmit}
-                                >
-                                    Sign up
-                                </Button>
+                                <div className="text-center">
+                                    <Button
+                                        color="dark"
+                                        style={{ marginTop: '1rem' }}
+                                        onClick={this.onSubmit}
+                                    >                                
+                                        Sign up
+                                    </Button>
+                                </div>
                             </FormGroup>
                         </Form>
                     </ModalBody>

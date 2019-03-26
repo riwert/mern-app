@@ -70,6 +70,12 @@ class LoginModal extends Component {
         this.props.login(user);
     }
 
+    onKeyUp = e => {
+        if (e.key === 'Enter') {
+            this.onSubmit(e);
+        }
+    }
+
     render() {
         return (
             <>
@@ -82,6 +88,7 @@ class LoginModal extends Component {
 
                 <Modal
                     isOpen={this.state.modal}
+                    toggle={this.toggle}
                     autoFocus={false}
                 >
                     <ModalHeader toggle={this.toggle}>Login</ModalHeader>
@@ -97,6 +104,7 @@ class LoginModal extends Component {
                                     name="email"
                                     placeholder="e-mail"
                                     onChange={this.onChange}
+                                    onKeyUp={this.onKeyUp}
                                 />
                                 <Label for="password">Password</Label>
                                 <Input
@@ -106,14 +114,17 @@ class LoginModal extends Component {
                                     name="password"
                                     placeholder="password"
                                     onChange={this.onChange}
+                                    onKeyUp={this.onKeyUp}
                                 />
-                                <Button
-                                    color="dark"
-                                    style={{ marginTop: '1rem' }}
-                                    onClick={this.onSubmit}
-                                >
-                                    Log in
-                                </Button>
+                                <div className="text-center">
+                                    <Button
+                                        color="dark"
+                                        style={{ marginTop: '1rem' }}
+                                        onClick={this.onSubmit}
+                                    >
+                                        Log in
+                                    </Button>
+                                </div>
                             </FormGroup>
                         </Form>
                     </ModalBody>
