@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
+import { ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
-import { getItems, deleteItem } from '../actions/itemActions';
+import { getItems, deleteItem } from '../../actions/itemActions';
 import PropTypes from 'prop-types';
 
 class ItemList extends Component {
@@ -25,7 +25,7 @@ class ItemList extends Component {
     render() {
         const { items } = this.props.item;
         return (
-            <Container>
+            <>
                 <ListGroup>
                     <TransitionGroup className="item-list">
                         {items.map(({ _id, name }) => (
@@ -47,7 +47,7 @@ class ItemList extends Component {
                         ))}
                     </TransitionGroup>
                 </ListGroup>
-            </Container>
+            </>
         );
     }
 }

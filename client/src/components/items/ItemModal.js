@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {
-    Container,
+import {    
     Button,
     Modal,
     ModalHeader,
@@ -11,7 +10,7 @@ import {
     Input
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { addItem } from '../actions/itemActions';
+import { addItem } from '../../actions/itemActions';
 import PropTypes from 'prop-types';
 
 class ItemModal extends Component {
@@ -46,7 +45,7 @@ class ItemModal extends Component {
 
     render() {
         return (
-            <Container>
+            <>
                 {this.props.isAuthenticated ? (
                     <>
                         <Button
@@ -90,7 +89,7 @@ class ItemModal extends Component {
                 ) : (
                     <h4 className="mb-3">Log in to manage items.</h4>
                 )}                
-            </Container>
+            </>
         );
     }
 }
