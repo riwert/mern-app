@@ -105,6 +105,7 @@ class LoginModal extends Component {
                                     placeholder="e-mail"
                                     onChange={this.onChange}
                                     onKeyUp={this.onKeyUp}
+                                    autoFocus
                                 />
                                 <Label for="password">Password</Label>
                                 <Input
