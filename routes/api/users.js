@@ -3,8 +3,6 @@ const router = express.Router();
 const bcript = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const auth = require('../../middleware/auth');
-
-// User model
 const User = require('../../models/User');
 
 // @route GET api/users
@@ -12,10 +10,12 @@ const User = require('../../models/User');
 // @acess Private
 router.get('/', auth, (req, res) => {
     User.find()
-        .sort({ date: -1 })
-        .then(users => res.json(users.map(user => {
-            return user.name;
-        })));
+        .sort({ register_date: 1 })
+        .then(users => res.json(
+            users.map(user => {
+                return user.name;
+            })
+        ));
 });
 
 // @route POST api/users
