@@ -58,7 +58,7 @@ class ItemModal extends Component {
 
                         <Modal
                             isOpen={this.state.modal}
-                            modal={this.toggle}
+                            toggle={this.toggle}
                             autoFocus={false}
                         >
                             <ModalHeader toggle={this.toggle}>Add new item to the list</ModalHeader>
