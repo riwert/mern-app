@@ -8,7 +8,7 @@ app.use(express.json());
 
 // Connect to MongoDB
 mongoose
-    .connect(require('./config/keys').mongoURL, { useNewUrlParser: true, useCreateIndex: true })
+    .connect(process.env.MONGODB_URL, { useNewUrlParser: true, useCreateIndex: true })
     .then(() => console.log('MongoDB connected...'))
     .catch(error => console.log(error));
 
