@@ -36,7 +36,7 @@ class AppNavbar extends Component {
         const authLinks = (
             <>
                 <NavItem>
-                    <span className="navbar-text mr-3">
+                    <span className="navbar-text mx-2">
                         <strong>{user ? `Welcome ${user.name}` : ''}</strong>
                     </span>
                 </NavItem>
