@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
     Button,
     Modal,
@@ -11,8 +13,6 @@ import {
     NavLink,
     Alert
 } from 'reactstrap';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { register } from '../../actions/authActions';
 import { clearErrors } from '../../actions/errorActions';
 
@@ -149,8 +149,7 @@ class RegisterModal extends Component {
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
-    error: state.error,
-    register: PropTypes.func.isRequired
+    error: state.error
 });
 
 export default connect(mapStateToProps, { register, clearErrors })(RegisterModal);

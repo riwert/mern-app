@@ -8,7 +8,7 @@ const Item = require('../../models/Item');
 // @acess Public
 router.get('/', (req, res) => {
     Item.find()
-        .sort({ date: -1 })
+        .sort({ add_date: -1 })
         .then(items => res.json(items));
 });
 
@@ -17,7 +17,8 @@ router.get('/', (req, res) => {
 // @acess Private
 router.post('/', auth, (req, res) => {
     const newItem = new Item({
-        name: req.body.name
+        name: req.body.name,
+        user: req.body.user
     });
 
     newItem

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
     Button,
     Modal,
@@ -11,8 +13,6 @@ import {
     NavLink,
     Alert
 } from 'reactstrap';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { login } from '../../actions/authActions';
 import { clearErrors } from '../../actions/errorActions';
 

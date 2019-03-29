@@ -7,9 +7,13 @@ const ItemSchema = new Schema({
         type: String,
         required: true
     },
-    date: {
+    add_date: {
         type: Date,
         default: Date.now
+    },
+    user: {
+        type: Object,
+        ref: 'User'
     }
 });
 

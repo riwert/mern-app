@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../../actions/itemActions';
-import PropTypes from 'prop-types';
 
 class ItemList extends Component {
 
@@ -24,14 +24,15 @@ class ItemList extends Component {
 
     render() {
         const { items } = this.props.item;
+        const { isAuthenticated } = this.props;
         return (
             <>
                 <ListGroup>
                     <TransitionGroup className="item-list">
-                        {items.map(({ _id, name }) => (
+                        {items.map(({ _id, name, user }) => (
                             <CSSTransition key={_id} timeout={500} classNames="item">
                                 <ListGroupItem>
-                                    {this.props.isAuthenticated ? (
+                                    {isAuthenticated ? (
                                         <Button
                                             className="remove-btn mr-2"
                                             color="danger"
@@ -42,6 +43,7 @@ class ItemList extends Component {
                                         <span className="mr-1">&bull;</span>
                                     )}
                                     {name}
+                                    {user ? (<div className="float-right">Added by: <strong>{user.name}</strong></div>) : ''}
                                 </ListGroupItem>
                             </CSSTransition>
                         ))}
